@@ -15,12 +15,14 @@ const ServicesSection = () => {
       icon: FiCode,
       title: "Frontend Development",
       description:
-        "Building responsive, interactive web applications using React, Next.js, and TypeScript with modern UI libraries.",
+        "Building responsive, high-performance web applications using React, Next.js, and TypeScript with modern UI libraries and smooth animations.",
       features: [
         "React & Next.js",
         "TypeScript",
         "Responsive Design",
         "Performance Optimization",
+        "Framer Motion",
+        "GSAP",
       ],
     },
     {
