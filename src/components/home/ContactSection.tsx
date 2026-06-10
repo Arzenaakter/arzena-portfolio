@@ -1,18 +1,19 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Container from "./Container";
 import {
-  MapPin,
-  Phone,
-  Mail,
-  Send,
-  MessageCircle,
-  Clock,
-  Globe,
-} from "lucide-react";
-import Container from "@/components/Container";
+  FiGlobe,
+  FiMail,
+  FiMapPin,
+  FiMessageCircle,
+  FiPhone,
+  FiSend,
+} from "react-icons/fi";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -40,25 +41,25 @@ const ContactSection = () => {
 
   const contactInfo = [
     {
-      icon: MapPin,
+      icon: FiMapPin,
       title: "Location",
       details: "Bogura, Bangladesh",
       description: "Available for remote work worldwide",
     },
     {
-      icon: Phone,
+      icon: FiPhone,
       title: "Phone",
       details: "+8801766179470",
-      description: "Available 9 AM - 6 PM (GMT+6)",
+      description: "Available 9 AM - 10 PM (GMT+6)",
     },
     {
-      icon: Mail,
+      icon: FiMail,
       title: "Email",
       details: "arzenaakter@gmail.com",
       description: "Response within 24 hours",
     },
     {
-      icon: Globe,
+      icon: FiGlobe,
       title: "Languages",
       details: "Bangla, English, Hindi",
       description: "Multilingual communication",
@@ -86,7 +87,7 @@ const ContactSection = () => {
               <Card>
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <MessageCircle className="w-6 h-6 text-primary" />
+                    <FiMessageCircle className="w-6 h-6 text-primary" />
                     <h3 className="text-2xl font-semibold">Send Message</h3>
                   </div>
 
@@ -168,7 +169,7 @@ const ContactSection = () => {
                     </div>
 
                     <Button type="submit" className="w-full md:w-auto gap-2">
-                      <Send className="w-4 h-4" />
+                      <FiSend className="w-4 h-4" />
                       Send Message
                     </Button>
                   </form>
@@ -189,7 +190,7 @@ const ContactSection = () => {
                       const IconComponent = info.icon;
                       return (
                         <div key={index} className="flex gap-4">
-                          <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                             <IconComponent className="w-5 h-5 text-primary" />
                           </div>
                           <div>

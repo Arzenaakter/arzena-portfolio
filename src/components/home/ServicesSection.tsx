@@ -122,7 +122,7 @@ const ServicesSection = () => {
                           key={i}
                           className="text-sm text-muted-foreground flex items-center gap-2"
                         >
-                          <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 bg-primary rounded-full shrink-0" />
                           {feature}
                         </li>
                       ))}

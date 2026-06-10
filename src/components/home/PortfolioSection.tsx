@@ -1,8 +1,9 @@
+"use client";
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Eye } from "lucide-react";
-import Container from "@/components/Container";
+import Container from "./Container";
+import { FiExternalLink, FiEye, FiGithub } from "react-icons/fi";
 
 const PortfolioSection = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -115,8 +116,8 @@ const PortfolioSection = () => {
           (project) =>
             project.category === activeFilter ||
             project.technologies.some((tech) =>
-              tech.toLowerCase().includes(activeFilter.toLowerCase())
-            )
+              tech.toLowerCase().includes(activeFilter.toLowerCase()),
+            ),
         );
 
   return (
@@ -172,11 +173,11 @@ const PortfolioSection = () => {
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <button className="flex-1 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors">
-                      <Eye className="w-4 h-4" />
+                      <FiEye className="w-4 h-4" />
                       Live Demo
                     </button>
                     <button className="flex-1 bg-background/90 text-foreground px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-background transition-colors">
-                      <Github className="w-4 h-4" />
+                      <FiGithub className="w-4 h-4" />
                       Code
                     </button>
                   </div>
@@ -201,7 +202,7 @@ const PortfolioSection = () => {
                           key={i}
                           className="text-xs text-muted-foreground flex items-start gap-2"
                         >
-                          <span className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0" />
+                          <span className="w-1 h-1 bg-primary rounded-full mt-2 shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -228,14 +229,14 @@ const PortfolioSection = () => {
                       href={project.liveLink}
                       className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <FiExternalLink className="w-4 h-4" />
                       Live Demo
                     </a>
                     <a
                       href={project.githubLink}
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      <Github className="w-4 h-4" />
+                      <FiGithub className="w-4 h-4" />
                       Source Code
                     </a>
                   </div>
