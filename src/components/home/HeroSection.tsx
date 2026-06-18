@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import heroBg from "@/assets/hero-bg.jpg";
-import Container from "./Container";
-
+import Container from "../common/Container";
+import MotionComponent from "../common/MotionComponent";
+import Link from "next/link";
+import { motion } from "framer-motion";
 const roles = ["Frontend Developer", "ReactJs Developer", "NextJs Developer"];
 
 const HeroSection = () => {
@@ -53,8 +55,16 @@ const HeroSection = () => {
 
       <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Coding Illustration with Glow */}
-          <div className="order-1 lg:order-1 flex justify-center">
+          {/* Coding Illustration with Glow */}{" "}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            className="order-1 lg:order-1 flex justify-center"
+          >
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute -inset-8 bg-linear-to-r from-primary/20 via-cyan-400/30 to-primary/20 rounded-full blur-2xl animate-glow-pulse opacity-60" />
@@ -529,28 +539,39 @@ const HeroSection = () => {
                 </svg>
               </div>
             </div>
-          </div>
-
+          </motion.div>
           {/* Content */}
           <div className="order-2 lg:order-2 text-center lg:text-left">
-            <p className="text-muted-foreground mb-2 animate-slide-up">
-              Hello, I&apos;m
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up animation-delay-200">
-              Arzena Akter
-            </h1>
-            <h2 className="text-xl md:text-2xl mb-6 animate-slide-up animation-delay-400">
-              And I&apos;m a{" "}
-              <span className="text-gradient font-semibold">
-                {displayText}
-                <span className="animate-pulse">|</span>
-              </span>
-            </h2>
-            <p className="text-muted-foreground max-w-lg mb-8 animate-slide-up animation-delay-600 mx-auto lg:mx-0">
-              Passionate frontend developer crafting beautiful, responsive, and
-              user-friendly web experiences. I transform ideas into elegant
-              digital solutions.
-            </p>
+            <MotionComponent>
+              {" "}
+              <p className="text-muted-foreground mb-2 animate-slide-up">
+                Hello, I&apos;m
+              </p>
+            </MotionComponent>
+            <MotionComponent>
+              {" "}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up animation-delay-200">
+                Arzena Akter
+              </h1>
+            </MotionComponent>
+            <MotionComponent>
+              {" "}
+              <h2 className="text-xl md:text-2xl mb-6 animate-slide-up animation-delay-400">
+                And I&apos;m a{" "}
+                <span className="text-gradient font-semibold">
+                  {displayText}
+                  <span className="animate-pulse">|</span>
+                </span>
+              </h2>
+            </MotionComponent>
+            <MotionComponent>
+              {" "}
+              <p className="text-muted-foreground max-w-lg mb-8 animate-slide-up animation-delay-600 mx-auto lg:mx-0">
+                Passionate frontend developer crafting beautiful, responsive,
+                and user-friendly web experiences. I transform ideas into
+                elegant digital solutions.
+              </p>
+            </MotionComponent>
 
             {/* Social Links */}
             <div
@@ -559,13 +580,15 @@ const HeroSection = () => {
             >
               {[FaFacebook, FaGithub, FaInstagram, FaLinkedin].map(
                 (Icon, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className="w-10 h-10 rounded-full border border-primary/50 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
+                  <MotionComponent key={index}>
+                    {" "}
+                    <Link
+                      href="#"
+                      className="w-10 h-10 rounded-full border border-primary/50 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </Link>
+                  </MotionComponent>
                 ),
               )}
             </div>
@@ -575,14 +598,23 @@ const HeroSection = () => {
               className="flex gap-4 justify-center lg:justify-start animate-slide-up"
               style={{ animationDelay: "1s" }}
             >
-              <Button variant="hero" size="xl">
-                Hire Me
-              </Button>
-              <a href="#contact">
-                <Button variant="heroOutline" size="xl">
-                  Contact Me
+              <MotionComponent>
+                <Button variant="hero" size="xl">
+                  <Link
+                    href="https://drive.google.com/file/d/1M4giSkDOrlTYjBPgmATCUTm1OUhFSjdt/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {" "}
+                    Hire Me
+                  </Link>
                 </Button>
-              </a>
+              </MotionComponent>
+              <MotionComponent>
+                <Button variant="heroOutline" size="xl">
+                  <Link href="#contact"> Contact Me</Link>
+                </Button>
+              </MotionComponent>
             </div>
           </div>
         </div>

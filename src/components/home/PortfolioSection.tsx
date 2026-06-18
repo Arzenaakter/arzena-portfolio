@@ -2,8 +2,11 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Container from "./Container";
+import Container from "../common/Container";
+import HeadingComponent from "../common/HeadingComponent";
 import { FiExternalLink, FiEye, FiGithub } from "react-icons/fi";
+import MotionComponent from "../common/MotionComponent";
+import Image from "next/image";
 
 const PortfolioSection = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -17,7 +20,8 @@ const PortfolioSection = () => {
       category: "MERN Stack",
       description:
         "A comprehensive summer camp art school platform with role-based access for students, instructors, and admins. Features payment integration and course management.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
       technologies: [
         "React",
         "Express.js",
@@ -32,7 +36,7 @@ const PortfolioSection = () => {
         "Admin dashboard for user and class management",
         "Instructor tools for class creation and management",
       ],
-      liveLink: "#",
+      liveLink: "https://summer-camp-44ba3.web.app/",
       githubLink: "#",
       featured: true,
     },
@@ -42,7 +46,8 @@ const PortfolioSection = () => {
       category: "E-commerce",
       description:
         "MERN Stack e-commerce platform for toy products with full CRUD operations, authentication, and advanced filtering capabilities.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
       technologies: [
         "React",
         "Express.js",
@@ -66,7 +71,8 @@ const PortfolioSection = () => {
       category: "Next.js",
       description:
         "Multilingual education platform with role-based dashboards, progress tracking, and comprehensive user management system.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -90,7 +96,8 @@ const PortfolioSection = () => {
       category: "React",
       description:
         "Comprehensive business management platform with modules for services, bookings, finance, and user management.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
       technologies: [
         "Next.js",
         "React Context",
@@ -124,133 +131,91 @@ const PortfolioSection = () => {
     <section id="portfolio" className="py-20 bg-muted/30">
       <Container>
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              A showcase of my recent projects demonstrating expertise in modern
-              web development technologies and best practices
-            </p>
-          </div>
-
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === filter
-                    ? "bg-primary text-primary-foreground shadow-lg"
-                    : "bg-background text-muted-foreground hover:bg-primary/10 hover:text-primary"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
+          <HeadingComponent
+            heading="Projects"
+            subHeading=" A showcase of my recent projects demonstrating expertise in modern
+              web development technologies and best practices"
+          />
 
           {/* Projects Grid */}
+
           <div className="grid md:grid-cols-2 gap-8">
             {filteredProjects.map((project) => (
-              <Card
-                key={project.id}
-                className="group overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-500"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {project.featured && (
-                      <Badge className="bg-primary/90 text-primary-foreground">
-                        Featured
-                      </Badge>
-                    )}
+              <MotionComponent key={project.id}>
+                <div className="container mx-auto rounded-md w-[90%] group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1  bg-background backdrop-blur-xs md:py-5 lg:ps-9 flex md:flex-row flex-col gap-5 md:h-full h-auto ">
+                  <div className="  bg-card rounded-md  z-10 md:w-[60%] w-full  md:-ms-20 md:h-[90%] overflow-hidden relative">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover rounded-md"
+                      priority
+                    />
                   </div>
-                  <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="flex-1 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors">
-                      <FiEye className="w-4 h-4" />
-                      Live Demo
-                    </button>
-                    <button className="flex-1 bg-background/90 text-foreground px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-background transition-colors">
-                      <FiGithub className="w-4 h-4" />
-                      Code
-                    </button>
+                  <div className="w-full z-10 p-5  ">
+                    <div>
+                      {/* Title */}
+                      <h3 className="text-lg md:text-2xl font-serif text-foreground mb-1 leading-tight">
+                        {project.title}
+                      </h3>
+
+                      {/* Description / Subtext */}
+                      <p className="text-sm text-foreground/80  mb-4 font-sans ">
+                        {project.description}
+                      </p>
+
+                      {/* Features styled like lyrics text block */}
+                      <div className="mb-6 space-y-1 border-left-2 border-slate-100 pl-1">
+                        {project.features?.slice(0, 4).map((feature, i) => (
+                          <li
+                            key={i}
+                            className="text-xs font-sans text-foreground/80 leading-relaxed"
+                          >
+                            {feature}
+                          </li>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Footer Button Group */}
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 border-t border-slate-800">
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-slate-900 text-white px-5 py-2.5 rounded-md text-xs font-medium tracking-wide flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors shadow-sm"
+                      >
+                        <FiEye className="w-3.5 h-3.5" />
+                        View Project
+                      </a>
+
+                      {project.githubLink && (
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2.5 rounded-md text-xs font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-50 border border-slate-700 transition-all flex items-center justify-center gap-2"
+                        >
+                          <FiGithub className="w-3.5 h-3.5" />
+                          Code
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-semibold">{project.title}</h3>
-                    <Badge variant="secondary" className="text-xs">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Key Features */}
-                  <div className="mb-4">
-                    <h4 className="text-sm font-medium mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {project.features.slice(0, 3).map((feature, i) => (
-                        <li
-                          key={i}
-                          className="text-xs text-muted-foreground flex items-start gap-2"
-                        >
-                          <span className="w-1 h-1 bg-primary rounded-full mt-2 shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 4).map((tech, i) => (
-                      <Badge key={i} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.technologies.length - 4}
-                      </Badge>
-                    )}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-3">
-                    <a
-                      href={project.liveLink}
-                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
-                    >
-                      <FiExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.githubLink}
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <FiGithub className="w-4 h-4" />
-                      Source Code
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
+              </MotionComponent>
             ))}
           </div>
 
           {/* View More */}
-          <div className="text-center mt-12">
-            <button className="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary/10 transition-colors">
-              View All Projects
-            </button>
-          </div>
+          <MotionComponent>
+            {" "}
+            <div className="text-center mt-12">
+              <button className="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary/10 transition-colors">
+                View All Projects
+              </button>
+            </div>
+          </MotionComponent>
         </div>
       </Container>
     </section>

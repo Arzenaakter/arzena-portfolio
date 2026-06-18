@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MdOutlineFileDownload, MdMenu, MdClose } from "react-icons/md";
-import Container from "./Container";
+import Container from "../common/Container";
+import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "#home", active: true },
@@ -106,8 +107,16 @@ const Navbar = () => {
 
           {/* Theme toggle & Download CV */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="default" size="sm" className="gap-2">
-              Resume <MdOutlineFileDownload className="w-4 h-4" />
+            <Button asChild variant="default" size="sm">
+              <Link
+                href="https://drive.google.com/file/d/1M4giSkDOrlTYjBPgmATCUTm1OUhFSjdt/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gap-2 w-fit mt-2"
+              >
+                {" "}
+                Resume <MdOutlineFileDownload className="w-4 h-4" />
+              </Link>
             </Button>
           </div>
 
@@ -140,8 +149,16 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="default" size="sm" className="gap-2 w-fit mt-2">
-                Resume <MdOutlineFileDownload className="w-4 h-4" />
+              <Button asChild variant="default" size="sm">
+                <Link
+                  href="https://drive.google.com/file/d/1M4giSkDOrlTYjBPgmATCUTm1OUhFSjdt/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gap-2 w-fit mt-2"
+                >
+                  {" "}
+                  Resume <MdOutlineFileDownload className="w-4 h-4" />
+                </Link>
               </Button>
             </div>
           </div>

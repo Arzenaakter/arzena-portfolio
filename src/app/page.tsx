@@ -1,5 +1,6 @@
 import AboutSection from "@/components/home/AboutSection";
 import ContactSection from "@/components/home/ContactSection";
+import ExperienceSection from "@/components/home/ExperienceSection";
 import HeroSection from "@/components/home/HeroSection";
 import Navbar from "@/components/home/Navbar";
 import PortfolioSection from "@/components/home/PortfolioSection";
@@ -11,9 +12,9 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-
       <AboutSection />
       <SkillsSection />
+      <ExperienceSection />
       <ServicesSection />
       <PortfolioSection />
 
