@@ -1,0 +1,168 @@
+[
+    {
+        "id": 1,
+        "title": "Learnhub",
+        "subtitle": "Next-Gen AI-Powered Learning Management Platform",
+        "description": "An advanced, type-safe LMS architecture built with Next.js App Router and TypeScript, integrating an LLM layer to provide personalized learning pathways, intelligent course generation, and automated code/essay assessments.",
+        "detailedDescription": "Learnhub is a cutting-edge learning platform designed to revolutionize digital education by combining robust course management with artificial intelligence. Built on top of Next.js and TypeScript for ultimate type-safety and performance, the application leverages Redux Toolkit for complex, predictable global state management across its multi-layered user journeys. Currently featuring an optimized landing page showcasing interactive course grids and deep-dive detail views, the platform equips administrators with rich form-validation suites driven by React Hook Form to seamlessly compile and publish educational content. The backend architecture utilizes Express and Mongoose to serve scalable REST APIs, structuring complex data relations between courses, modules, and user progress tables to lay the groundwork for an immersive, LLM-driven smart learning environment.",
+        "image": "/learnhub.png",
+        "technologies": [
+            "Next.js (App Router)",
+            "TypeScript",
+            "React",
+            "Redux Toolkit",
+            "React Hook Form",
+            "Shadcn UI",
+            "Tailwind CSS",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Mongoose"
+        ],
+        "features": [
+            "Highly optimized, SEO-friendly landing page leveraging Next.js Server Components for lightning-fast initial page loads",
+            "Type-safe course exploration system displaying granular breakdowns of modules, learning objectives, and instructor metrics",
+            "Robust Admin Course Factory utilizing React Hook Form and Shadcn UI components for complex multi-step data validation",
+            "Centralized global state slice via Redux Toolkit to manage user preferences, authentication contexts, and draft configurations"
+        ],
+        "challenges": [
+            "Architecting a seamless, unified design system using Tailwind CSS and Shadcn UI primitives while ensuring deep type-safety across customized UI components",
+            "Designing a flexible, deeply nested MongoDB schema via Mongoose to elegantly handle sequential course modules, lessons, and future interactive quiz states",
+            "Configuring Next.js App Router route handlers alongside an external Express backend to optimize caching behaviors and data revalidation frequencies"
+        ],
+        "improvements": [
+            "Integrate an LLM chatbot (via OpenAI API / LangChain) acting as an on-demand personal tutor to answer students' context-aware questions inside lessons",
+            "Implement AI-generated personalized learning pathways that analyze a student's weak points and dynamically generate quizzes or summary modules",
+            "Build an automated code execution and essay evaluation engine utilizing LLM analysis to deliver instantaneous feedback on student assignments",
+            "Add a workspace feature enabling instructors to paste a raw topic or transcript and have an LLM automatically format a structured, multi-module course draft"
+        ],
+        "liveUrl": "https://portal-frontend-orcin.vercel.app/",
+        "githubUrl": "https://github.com/Arzenaakter/portal-frontend",
+        "serverUrl": "https://github.com/Arzenaakter/portal-backend",
+        "category": "Full Stack"
+    },
+    {
+        "id": 2,
+        "title": "SketchVenture",
+        "subtitle": "Summer Camp Art School Platform",
+        "description": "A comprehensive MERN stack platform for a summer camp art school, enabling students to discover courses, choose instructors, and securely enroll via integrated payments. Features distinct role-based dashboards for Admins, Instructors, and Students alongside secure JWT authentication.",
+        "detailedDescription": "SketchVenture is a fully interactive, role-based web application tailored for a summer camp art school ecosystem. The platform bridges the gap between aspiring art students and professional instructors. It includes a robust role-based access control system with three distinct user tiers. Students can browse, select, delete, and enroll in available art classes while seamlessly completing their purchases through integrated payment processing. Instructors are equipped with specialized tools to create, submit, and track their custom art courses. On the administrative side, an overarching Admin panel allows full management of the platform's user base and course approvals. Built using the MERN stack (MongoDB, Express, React, Node.js), the platform prioritizes secure state and route handling, utilizing JSON Web Tokens (JWT) and Firebase Authentication to provide a smooth, dependable, and highly visual learning environment.",
+        "image": "/sketchventure.png",
+        "technologies": [
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Firebase Auth",
+            "JWT (JSON Web Tokens)",
+            "Stripe API",
+            "Tailwind CSS",
+            "DaisyUI",
+            "React Router",
+            "Axios"
+        ],
+        "features": [
+            "Role-based access control split into Student, Instructor, and Admin dashboards with customized permissions and UI layouts",
+            "Dynamic course management system enabling instructors to add, update, and track the status of their summer art classes",
+            "Comprehensive Student enrollment workflow featuring class selection, cart management, and seamless processing via Stripe",
+            "Centralized Admin control panel to oversee user roles, moderate newly submitted classes, and handle overall platform orchestration"
+        ],
+        "challenges": [
+            "Implementing a strict three-tier role-based access control system on both front-end routes and back-end REST endpoints using custom middleware and Firebase token verification",
+            "Managing secure checkout state and preventing duplicate student enrollment by syncing Stripe webhook/payment confirmations accurately with MongoDB collections",
+            "Designing a dynamic class status workflow where classes submitted by instructors remain pending until verified and approved via the Admin dashboard"
+        ],
+        "improvements": [
+            "Integrate real-time chat or discussion boards between students and instructors using WebSockets for assignments and feedback",
+            "Implement an automated email receipt and enrollment confirmation system using Nodemailer or SendGrid",
+            "Add a visual rating and review system for completed classes to help new students choose the best instructors",
+            "Incorporate a dynamic course analytics dashboard for instructors to track total student enrollment and revenue metrics"
+        ],
+        "liveUrl": "https://summer-camp-44ba3.web.app/",
+        "githubUrl": "https://github.com/Arzenaakter/sketchventure-client-site",
+        "serverUrl": "https://github.com/Arzenaakter/sketchventure-server-site",
+        "category": "Full Stack"
+    },
+    {
+        "id": 3,
+        "title": "ToyTrove",
+        "subtitle": "E-Commerce Marketplace for Toy Collectors",
+        "description": "A dynamic MERN stack e-commerce marketplace featuring robust CRUD operations where authenticated users can securely list, manage, and scale their product catalogs with built-in search and price sorting functionality.",
+        "detailedDescription": "ToyTrove is a full-featured marketplace platform developed using the MERN stack (MongoDB, Express.js, React, Node.js) specifically engineered for toy merchants and collectors. The application enforces complete resource security by allowing public users to browse all listed items, while restricting item modifications to authenticated owners only. Utilizing Firebase Authentication, users can safely register and log into the system to unlock private routes. Once authenticated, users gain access to a personal inventory manager to add new products, update existing details, or remove stock entirely. To enhance the buyer's user experience, ToyTrove implements high-performance server-side or client-side indexing, offering real-time product search by title alongside advanced sorting options to organize listings seamlessly by ascending and descending price ranges.",
+        "image": "/toytrove.png",
+        "technologies": [
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Firebase Auth",
+            "REST API",
+            "Tailwind CSS",
+            "DaisyUI",
+            "React Router",
+            "Axios"
+        ],
+        "features": [
+            "Secure Firebase Authentication mapping out public browsing capabilities versus restricted, member-only vendor privileges",
+            "Protected CRUD (Create, Read, Update, Delete) architecture ensuring users can only modify or delete products they personally created",
+            "Advanced inventory control with real-time text-based search queries matching titles across the marketplace database",
+            "Dynamic UI controls allowing multi-directional price sorting (low-to-high and high-to-low) to help customers find deals instantly"
+        ],
+        "challenges": [
+            "Implementing secure backend route verification and database-level checks to prevent unauthorized users from executing API update/delete operations on products they do not own",
+            "Designing state management to handle seamless asynchronous data fetching while keeping the search and sorting dropdowns fully synced without lagging the user interface",
+            "Structuring a clean MongoDB schema that effectively associates product data entries with unique user identifiers (UIDs) provided by Firebase"
+        ],
+        "improvements": [
+            "Integrate a fully functional shopping cart and order history panel using a state provider like Redux Toolkit",
+            "Add a visual 'My Inventory' dashboard tracking sales analytics, view counts, and low-stock alerts for active sellers",
+            "Implement image upload optimization using Cloudinary or AWS S3 to support high-resolution multi-angle toy photography",
+            "Incorporate a messaging system or 'Make an Offer' live bidding interaction using WebSockets to boost buyer-seller engagement"
+        ],
+        "liveUrl": "https://toytrove.web.app/",
+        "githubUrl": "https://github.com/Arzenaakter/ToyTrove-Client-site",
+        "serverUrl": "https://github.com/Arzenaakter/ToyTrove-Server-site",
+        "category": "Full Stack"
+    },
+    {
+        "id": 4,
+        "title": "FoodieFranzy",
+        "subtitle": "Culinary Explorer & Chef Recipe Showcase Platform",
+        "description": "A dynamic culinary platform built with the MERN stack that connects food enthusiasts with professional chefs and their signature recipes. Employs guarded routing to restrict premium recipe viewing to authenticated users and features a persistent user favorites collection.",
+        "detailedDescription": "FoodieFranzy is a vibrant web application engineered using the MERN stack (MongoDB, Express.js, React, Node.js) designed to showcase culinary experts and their signature recipes. The platform acts as an interactive bridge where public guests can explore chef profiles, their culinary backgrounds, and experience metrics. To drive user engagement and protect premium content, FoodieFranzy leverages Firebase Authentication to lock detailed chef recipe books behind a secure login wall. Once registered, authenticated food lovers can unlock exclusive recipes, review cooking steps, and utilize a personalized bookmarking system to save recipes to their curated favorites profile. The frontend provides a responsive, visual-heavy design optimized for food imagery, while the backend utilizes a RESTful API structure to serve and filter content securely.",
+        "image": "/foodiefranzy.png",
+        "technologies": [
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Firebase Auth",
+            "REST API",
+            "Tailwind CSS",
+            "DaisyUI",
+            "React Router",
+            "Axios"
+        ],
+        "features": [
+            "Dynamic roster displaying professional chefs along with metrics such as years of experience, recipe counts, and likes",
+            "Guarded content ecosystem requiring Firebase Authentication to unlock and view premium recipe ingredients and cooking instructions",
+            "Interactive personal profile features allowing logged-in foodies to save recipes to their favorites list with persistent storage",
+            "Highly responsive, component-driven UI tailored for seamless image rendering across mobile, tablet, and desktop viewports"
+        ],
+        "challenges": [
+            "Implementing conditional routing and route guards in React Router that smoothly prompt unauthenticated users to log in without breaking their navigation history",
+            "Designing an efficient MongoDB schema relation structure to handle user-to-recipe 'favorites' modeling without generating redundant database overhead",
+            "Optimizing the rendering of multiple media-heavy chef cards and layout structures to maintain rapid initial page load speeds"
+        ],
+        "improvements": [
+            "Incorporate a dynamic review, rating, and recipe commenting engine to foster a vibrant community of amateur home cooks",
+            "Implement a smart scaling tool within recipe pages allowing users to automatically adjust ingredient measurements based on serving size",
+            "Introduce an ingredient-based search filter, enabling users to discover recipes matching the specific items remaining in their pantry",
+            "Add an interactive video player module to host step-by-step video cooking tutorials alongside written guides"
+        ],
+        "liveUrl": "https://foodie-franzy.web.app/",
+        "githubUrl": "https://github.com/Arzenaakter/Foodie-Franzy-Client-site",
+        "serverUrl": "https://github.com/Arzenaakter/Foodie-Franzy-Server_site",
+        "category": "Full Stack"
+    }
+]
