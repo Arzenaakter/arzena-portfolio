@@ -48,8 +48,7 @@ const ExperienceSection = () => {
         <div className="max-w-6xl mx-auto">
           <HeadingComponent
             heading="Professional Journey"
-            subHeading="A comprehensive overview of my technical skills, tools, and core
-              strengths developed through 2+ years of professional experience"
+            subHeading="An interactive look into my career milestone path, combining robust code bases with meaningful user experiences to build modern web solutions."
           />
 
           {/* Timeline */}

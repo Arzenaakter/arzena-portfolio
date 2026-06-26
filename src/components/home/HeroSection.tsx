@@ -40,6 +40,13 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentRole]);
 
+  const socialLinks = [
+    { icon: FaFacebook, href: "https://www.facebook.com/ArzenaAkter.BD/" },
+    { icon: FaGithub, href: "https://github.com/Arzenaakter" },
+    { icon: FaInstagram, href: "https://www.instagram.com/arzena_akter/" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/arzena-akter/" },
+  ];
+
   return (
     <section
       id="home"
@@ -578,19 +585,18 @@ const HeroSection = () => {
               className="flex gap-4 mb-8 justify-center lg:justify-start animate-slide-up"
               style={{ animationDelay: "0.8s" }}
             >
-              {[FaFacebook, FaGithub, FaInstagram, FaLinkedin].map(
-                (Icon, index) => (
-                  <MotionComponent key={index}>
-                    {" "}
-                    <Link
-                      href="#"
-                      className="w-10 h-10 rounded-full border border-primary/50 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
-                    >
-                      <Icon className="w-4 h-4" />
-                    </Link>
-                  </MotionComponent>
-                ),
-              )}
+              {socialLinks.map(({ icon: Icon, href }, index) => (
+                <MotionComponent key={index}>
+                  <Link
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full border border-primary/50 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </Link>
+                </MotionComponent>
+              ))}
             </div>
 
             {/* CTA Buttons */}

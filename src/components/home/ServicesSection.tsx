@@ -101,8 +101,8 @@ const ServicesSection = () => {
               const IconComponent = service.icon;
               return (
                 <MotionComponent key={index}>
-                  <Card className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1">
-                    <CardContent className="p-6">
+                  <Card className="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 lg:h-[390px]">
+                    <CardContent className="px-6 pb-2">
                       <div className="mb-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                           <IconComponent className="w-6 h-6 text-primary" />

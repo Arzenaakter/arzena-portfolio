@@ -132,9 +132,12 @@ const PortfolioSection = () => {
       <MotionComponent>
         {" "}
         <div className="text-center mt-12">
-          <button className="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary/10 transition-colors">
-            View All Projects
-          </button>
+          <Link
+            href="https://github.com/Arzenaakter"
+            className="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary/10 transition-colors"
+          >
+            View All Projects on GitHub
+          </Link>
         </div>
       </MotionComponent>
     </section>
