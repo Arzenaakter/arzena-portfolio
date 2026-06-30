@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-screen z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-lg shadow-primary/5"
           : "bg-transparent"
@@ -123,7 +123,9 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-foreground hover:text-primary transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
           >
             {mobileMenuOpen ? (
               <MdClose className="w-6 h-6" />
@@ -132,38 +134,38 @@ const Navbar = () => {
             )}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border">
-            <div className="flex flex-col gap-4 pt-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
-                    link.active ? "text-primary" : "text-foreground"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <Button asChild variant="default" size="sm">
-                <Link
-                  href="https://drive.google.com/file/d/1M4giSkDOrlTYjBPgmATCUTm1OUhFSjdt/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gap-2 w-fit mt-2"
-                >
-                  {" "}
-                  Resume <MdOutlineFileDownload className="w-4 h-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        )}
       </Container>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden mt-4 pb-4 border-t border-border bg-background/95 ">
+          <Container className="flex flex-col  gap-4 pt-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
+                  link.active ? "text-primary" : "text-foreground"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+            <Button asChild variant="default" size="sm">
+              <Link
+                href="https://drive.google.com/file/d/1M4giSkDOrlTYjBPgmATCUTm1OUhFSjdt/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gap-2 w-fit mt-2"
+              >
+                {" "}
+                Resume <MdOutlineFileDownload className="w-4 h-4" />
+              </Link>
+            </Button>
+          </Container>
+        </div>
+      )}
     </nav>
   );
 };

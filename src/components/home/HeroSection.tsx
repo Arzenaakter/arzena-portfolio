@@ -50,7 +50,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen py-20 flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `url(${heroBg.src})`,
         backgroundSize: "cover",
